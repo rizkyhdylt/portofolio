@@ -1,0 +1,89 @@
+.footer-container {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Penyesuaian Warna Berdasarkan Tema */
+.dark-mode .footer-container {
+    background-color: #0d1116; /* Hitam pekat agar kontras dengan section atas */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light-mode .footer-container {
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+/* Styling Ikon Sosial Media */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-socials a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .footer-socials a {
+    color: #ffffff;
+}
+
+.light-mode .footer-socials a {
+    color: #000000;
+}
+
+.footer-socials a:hover {
+    color: #5000ca !important; /* Warna aksen ungu */
+    transform: translateY(-5px);
+}
+
+.footer-socials svg {
+    font-size: 2rem;
+}
+
+/* Styling Teks Footer */
+.footer-info p {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.dark-mode .footer-info p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.light-mode .footer-info p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-info span {
+    font-weight: 600;
+}
+
+.dark-mode .footer-info span {
+    color: #a855f7;
+}
+
+.light-mode .footer-info span {
+    color: #5000ca;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 30px 20px;
+    }
+    
+    .footer-info p {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,105 @@
+.profile-container {
+    padding: 0px 0;
+    width: 100%;
+}
+
+/* Membuat grid 2 kolom untuk Desktop */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi 50% kiri dan 50% kanan */
+    gap: 40px; /* Jarak antara kolom kiri dan kanan */
+    padding: 40px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-column p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.tech-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-list li {
+    margin-bottom: 10px;
+}
+
+/* Mode Gelap (Default atau dengan class .dark-mode) */
+.dark-mode .profile-grid,
+.dark-mode .profile-column h2,
+.dark-mode .profile-column p,
+.dark-mode .profile-column li,
+.dark-mode .profile-column strong,
+.dark-mode .social-links span {
+    color: white !important;
+}
+
+/* Warna ungu untuk sub-judul agar tetap menonjol */
+.dark-mode .profile-column h2 {
+    color: #ffffff !important; /* Warna ungu yang lebih terang agar kontras di bg gelap */
+}
+
+/* Mode Terang */
+.light-mode .profile-grid,
+.light-mode .profile-column h2,
+.light-mode .profile-column p,
+.light-mode .profile-column li,
+.light-mode .profile-column strong,
+.light-mode .social-links span {
+    color: #0d1116 !important;
+}
+
+.light-mode .profile-column h2 {
+    color: #000000 !important;
+}
+
+/* RESPONSIVE: Di HP, kolom akan tumpuk atas-bawah */
+@media (max-width: 992px) {
+    .profile-grid {
+        grid-template-columns: 1fr; /* Jadi satu kolom saja */
+        padding: 20px;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 20px; /* Jarak antar ikon */
+    margin-top: 15px;
+    font-size: 1.8rem; /* Ukuran ikon diperbesar */
+}
+
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+/* Efek Hover: Ikon sedikit melompat ke atas */
+.social-links a:hover {
+    transform: translateY(-5px);
+}
+
+/* Mode Gelap: Warna ikon default putih, hover ungu terang */
+.dark-mode .social-links a {
+    color: white !important;
+}
+
+.dark-mode .social-links a:hover {
+    color: #a855f7 !important; 
+}
+
+/* Mode Terang: Warna ikon default hitam, hover ungu gelap */
+.light-mode .social-links a {
+    color: #0d1116 !important;
+}
+
+.light-mode .social-links a:hover {
+    color: #5000ca !important;
+}
+
+/* Warna khusus jika ingin ikon Instagram berwarna pink saat disentuh */
+.social-links a:nth-child(3):hover {
+    color: #e1306c !important;
+}
