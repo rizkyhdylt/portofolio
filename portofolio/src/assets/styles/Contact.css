@@ -1,0 +1,124 @@
+.contact-container {
+    padding: 100px 0;
+    transition: all 0.3s ease;
+}
+
+.contact_wrapper {
+    max-width: 900px; /* Lebarkan sedikit agar ikon tidak terlalu mepet */
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.contact_wrapper h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.contact_wrapper p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 50px auto; /* Tambah margin-bottom */
+    line-height: 1.6;
+}
+
+/* --- GRID ICON --- */
+.contact-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsif */
+    gap: 30px; /* Jarak antar ikon */
+    justify-content: center;
+}
+
+.contact-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* Untuk efek border saat hover */
+}
+
+/* Warna default untuk ikon */
+.contact-icon-item svg {
+    font-size: 3.5rem; /* Ukuran ikon lebih besar */
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-icon-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* --- TEMA: DARK MODE --- */
+.dark-mode .contact-container {
+    color: #ffffff;
+}
+.dark-mode .contact_wrapper p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.dark-mode .contact-icon-item {
+    background-color: rgba(255, 255, 255, 0.05); /* Latar belakang ikon gelap */
+    color: #ffffff;
+}
+.dark-mode .contact-icon-item svg {
+    color: #a855f7; /* Warna ikon ungu */
+}
+.dark-mode .contact-icon-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #5a0ad1;
+    transform: translateY(-5px);
+}
+
+/* --- TEMA: LIGHT MODE --- */
+.light-mode .contact-container {
+    color: #000000;
+}
+.light-mode .contact_wrapper p {
+    color: rgba(0, 0, 0, 0.7);
+}
+.light-mode .contact-icon-item {
+    background-color: rgba(0, 0, 0, 0.03); /* Latar belakang ikon terang */
+    color: #000000;
+}
+.light-mode .contact-icon-item svg {
+    color: #5000ca; /* Warna ikon ungu gelap */
+}
+.light-mode .contact-icon-item:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: #5000ca;
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact_wrapper h1 {
+        font-size: 2.5rem;
+    }
+    .contact_wrapper p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .contact-icons-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+        gap: 20px;
+    }
+    .contact-icon-item {
+        flex-direction: row; /* Ikon dan teks sejajar di mobile */
+        justify-content: flex-start;
+        padding: 20px;
+    }
+    .contact-icon-item svg {
+        font-size: 2.5rem;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    .contact-icon-item span {
+        font-size: 1rem;
+    }
+}

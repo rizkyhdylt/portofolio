@@ -1,0 +1,143 @@
+/* --- BASE SECTION --- */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 85vh;
+    padding: 0 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- LOGIKA TEMA (DARK vs LIGHT) --- */
+
+/* DARK MODE */
+.dark-mode .about-section {
+    background-image: url("../images/bg-dark.png");
+    color: #ffffff;
+}
+
+/* LIGHT MODE - Perbaikan kontras */
+.light-mode .about-section {
+    background-image: url("../images/bg-light.png");
+    color: #ffffff;
+}
+
+/* Overlay agar teks lebih pop-up */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+.dark-mode .about-section::before { background: rgba(0, 0, 0, 0.5); }
+.light-mode .about-section::before { background: rgba(255, 255, 255, 0.3); }
+
+/* --- KONTEN --- */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 5;
+}
+
+/* --- GAMBAR PROFIL --- */
+.image-wrapper-outer {
+    position: relative;
+}
+
+.image-wrapper {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.dark-mode .image-wrapper {
+    border: 6px solid #5a0ad1;
+    box-shadow: 0 0 30px rgba(90, 10, 209, 0.4);
+}
+
+.light-mode .image-wrapper {
+    border: 6px solid #5000ca;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.6); /* Tetap zoom wajah sesuai keinginanmu */
+}
+
+.image-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%; height: 150%;
+    background: radial-gradient(circle, rgba(90, 10, 209, 0.15) 0%, transparent 70%);
+    z-index: 0;
+}
+
+/* --- TEXT & TYPOGRAPHY --- */
+.content h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+/* Warna Nama Belakang (Aksen) */
+.dark-mode .content h1 span { color: #a855f7; }
+.light-mode .content h1 span { color: #5000ca; }
+
+.title-job {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.light-mode .title-job { color: #222 !important; }
+
+.description {
+    font-size: 1.1rem;
+    max-width: 480px;
+    line-height: 1.6;
+}
+.light-mode .description { color: #444 !important; }
+
+/* SOSIAL MEDIA */
+.social_icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social_icons a {
+    transition: 0.3s ease;
+    color: inherit; /* Ikuti warna parent */
+}
+
+.social_icons a:hover {
+    color: #a855f7;
+    transform: translateY(-3px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .content h1 { font-size: 3.5rem; }
+    .social_icons { justify-content: center; }
+}
